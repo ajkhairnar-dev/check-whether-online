@@ -1,0 +1,30 @@
+
+<div class="full" [style.background-image]="'url(' + photo + ')'">
+
+  <div class="app-wrap">
+    <header class="text-center">
+      <input type="text" autocomplete="off" class="search-box" [(ngModel)]="cityname" placeholder="Search for a city..." (keyup.enter)="search()"/>
+    </header>
+    <main *ngIf="city">
+      <section class="location">
+        <div class="city">{{city}}, {{country}}</div>
+        <div class="date">{{myDate | date:'fullDate'}}</div> 
+      </section>
+      <div class="current">
+        <div class="temp">{{temp}}<span>°c</span></div>
+        <div class="weather">{{main}}</div>
+        <div class="hi-low">Humidity : {{humidity}}%</div>
+      </div>
+    </main>
+
+    <div class="seachdiv">
+      <h2 class="text-center text-light mt-3" *ngIf="search_show" >Search City..</h2>
+      <h3 class="text-center text-light mt-3" *ngIf="NotFound_show">City Not Found !</h3>
+    </div>
+    
+    <div class="web text-center" [ngStyle]="ob">
+      <a href="https://connectwith-jayesh.web.app" target="_blank" style="color: white;">powered by Jayesh Khairnar</a>
+    </div>
+  </div>
+  
+</div>
